@@ -1,3 +1,5 @@
+// @flow
+
 import find from './find';
 
 /**
@@ -11,10 +13,10 @@ import find from './find';
  * @returns {Boolean}
  */
 export default function isModifierRequired(
-  modifiers,
-  requestingName,
-  requestedName
-) {
+  modifiers: Array<Object>,
+  requestingName: string,
+  requestedName: string
+): boolean {
   const requesting = find(modifiers, ({ name }) => name === requestingName);
 
   const isRequired =

@@ -1,3 +1,5 @@
+// @flow
+
 /**
  * Get CSS computed property of the given element
  * @method
@@ -5,7 +7,7 @@
  * @argument {Eement} element
  * @argument {String} property
  */
-export default function getStyleComputedProperty(element, property) {
+export default function getStyleComputedProperty(element: HTMLElement, property: string): any {
   if (element.nodeType !== 1) {
     return [];
   }

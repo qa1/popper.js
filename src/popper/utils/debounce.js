@@ -1,3 +1,5 @@
+// @flow
+
 import isNative from './isNative';
 
 const isBrowser = typeof window !== 'undefined';
@@ -10,7 +12,7 @@ for (let i = 0; i < longerTimeoutBrowsers.length; i += 1) {
   }
 }
 
-export function microtaskDebounce(fn) {
+export function microtaskDebounce(fn: Function): Function {
   let scheduled = false;
   let i = 0;
   const elem = document.createElement('span');
@@ -28,13 +30,13 @@ export function microtaskDebounce(fn) {
   return () => {
     if (!scheduled) {
       scheduled = true;
-      elem.setAttribute('x-index', i);
+      elem.setAttribute('x-index', i.toString());
       i = i + 1; // don't use compund (+=) because it doesn't get optimized in V8
     }
   };
 }
 
-export function taskDebounce(fn) {
+export function taskDebounce(fn: Function): Function {
   let scheduled = false;
   return () => {
     if (!scheduled) {

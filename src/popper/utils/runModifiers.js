@@ -1,3 +1,5 @@
+// @flow
+
 import isFunction from './isFunction';
 import findIndex from './findIndex';
 
@@ -11,7 +13,7 @@ import findIndex from './findIndex';
  * @param {String} ends - Optional modifier name used as stopper
  * @returns {dataObject}
  */
-export default function runModifiers(modifiers, data, ends) {
+export default function runModifiers(modifiers: Array<Object>, data: Object, ends: number) {
   const modifiersToRun = ends === undefined
     ? modifiers
     : modifiers.slice(0, findIndex(modifiers, 'name', ends));

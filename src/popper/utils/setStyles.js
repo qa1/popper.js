@@ -1,3 +1,5 @@
+// @flow
+
 import isNumeric from './isNumeric';
 
 /**
@@ -8,7 +10,7 @@ import isNumeric from './isNumeric';
  * @argument {Object} styles
  * Object with a list of properties and values which will be applied to the element
  */
-export default function setStyles(element, styles) {
+export default function setStyles(element: HTMLElement, styles: Object) {
   Object.keys(styles).forEach(prop => {
     let unit = '';
     // add unit if the value is numeric and is one of the following

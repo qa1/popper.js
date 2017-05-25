@@ -1,3 +1,5 @@
+// @flow
+
 import find from './find';
 
 /**
@@ -9,7 +11,7 @@ import find from './find';
  * @argument value
  * @returns index or -1
  */
-export default function findIndex(arr, prop, value) {
+export default function findIndex(arr: Array<any>, prop: string, value: any): number {
   // use native findIndex if supported
   if (Array.prototype.findIndex) {
     return arr.findIndex(cur => cur[prop] === value);

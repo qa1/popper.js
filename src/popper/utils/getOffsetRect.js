@@ -1,3 +1,5 @@
+// @flow
+
 import getWindowSizes from './getWindowSizes';
 import getClientRect from './getClientRect';
 
@@ -8,7 +10,7 @@ import getClientRect from './getClientRect';
  * @param {Element} element
  * @return {Object} position - Coordinates of the element and its `scrollTop`
  */
-export default function getOffsetRect(element) {
+export default function getOffsetRect(element: HTMLElement): Object {
   let elementRect;
   if (element.nodeName === 'HTML') {
     const { width, height } = getWindowSizes();

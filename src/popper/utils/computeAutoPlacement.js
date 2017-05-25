@@ -1,3 +1,5 @@
+// @flow
+
 import getBoundaries from '../utils/getBoundaries';
 
 function getArea({ width, height }) {
@@ -14,13 +16,13 @@ function getArea({ width, height }) {
  * @returns {Object} The data object, properly modified
  */
 export default function computeAutoPlacement(
-  placement,
-  refRect,
-  popper,
-  reference,
-  boundariesElement,
-  padding = 0
-) {
+  placement: string,
+  refRect: Object,
+  popper: HTMLElement,
+  reference: HTMLElement,
+  boundariesElement: any,
+  padding: number = 0
+): string {
   if (placement.indexOf('auto') === -1) {
     return placement;
   }

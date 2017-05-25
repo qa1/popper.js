@@ -1,3 +1,5 @@
+// @flow
+
 /*
  * Helper to detect borders of a given element
  * @method
@@ -8,7 +10,7 @@
  * @return {number} borders - The borders size of the given axis
  */
 
-export default function getBordersSize(styles, axis) {
+export default function getBordersSize(styles: Object, axis: string): number {
   const sideA = axis === 'x' ? 'Left' : 'Top';
   const sideB = sideA === 'Left' ? 'Right' : 'Bottom';
 

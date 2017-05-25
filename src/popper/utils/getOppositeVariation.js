@@ -1,3 +1,5 @@
+// @flow
+
 /**
  * Get the opposite placement variation of the given one
  * @method
@@ -5,7 +7,7 @@
  * @argument {String} placement variation
  * @returns {String} flipped placement variation
  */
-export default function getOppositeVariation(variation) {
+export default function getOppositeVariation(variation: string): string {
   if (variation === 'end') {
     return 'start';
   } else if (variation === 'start') {

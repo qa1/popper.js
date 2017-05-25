@@ -16,12 +16,12 @@ export default class Tooltip {
   /**
    * Create a new Tooltip.js instance
    * @class Tooltip
-   * @param {HTMLElement} reference - The DOM node used as reference of the tooltip (it can be a jQuery element).
+   * @param {Element} reference - The DOM node used as reference of the tooltip (it can be a jQuery element).
    * @param {Object} options
    * @param {String} options.placement=bottom
    *      Placement of the popper accepted values: `top(-start, -end), right(-start, -end), bottom(-start, -end),
    *      left(-start, -end)`
-   * @param {HTMLElement|String|false} options.container=false - Append the tooltip to a specific element.
+   * @param {Element|String|false} options.container=false - Append the tooltip to a specific element.
    * @param {Number|Object} options.delay=0
    *      Delay showing and hiding the tooltip (ms) - does not apply to manual trigger type.
    *      If a number is supplied, delay is applied to both hide/show.
@@ -33,11 +33,11 @@ export default class Tooltip {
    *      The tooltip's `title` will be injected into the `.tooltip-inner` or `.tooltip__inner`.
    *      `.tooltip-arrow` or `.tooltip__arrow` will become the tooltip's arrow.
    *      The outermost wrapper element should have the `.tooltip` class.
-   * @param {String|HTMLElement|TitleFunction} options.title='' - Default title value if `title` attribute isn't present.
+   * @param {String|Element|TitleFunction} options.title='' - Default title value if `title` attribute isn't present.
    * @param {String} [options.trigger='hover focus']
    *      How tooltip is triggered - click, hover, focus, manual.
    *      You may pass multiple triggers; separate them with a space. `manual` cannot be combined with any other trigger.
-   * @param {HTMLElement} options.boundariesElement
+   * @param {Element} options.boundariesElement
    *      The element used as boundaries for the tooltip. For more information refer to Popper.js'
    *      [boundariesElement docs](https://popper.js.org/popper-documentation.html)
    * @param {Number|String} options.offset=0 - Offset of the tooltip relative to its reference. For more information refer to Popper.js'
@@ -121,11 +121,11 @@ export default class Tooltip {
    * Creates a new tooltip node
    * @memberof Tooltip
    * @private
-   * @param {HTMLElement} reference
+   * @param {Element} reference
    * @param {String} template
-   * @param {String|HTMLElement|TitleFunction} title
+   * @param {String|Element|TitleFunction} title
    * @param {Boolean} allowHtml
-   * @return {HTMLelement} tooltipNode
+   * @return {Element} tooltipNode
    */
   _create(reference, template, title, allowHtml) {
     // create tooltip element
@@ -270,8 +270,8 @@ export default class Tooltip {
    * Append tooltip to container
    * @memberof Tooltip
    * @private
-   * @param {HTMLElement} tooltip
-   * @param {HTMLElement|String|false} container
+   * @param {Element} tooltip
+   * @param {Element|String|false} container
    */
   _append(tooltipNode, container) {
     container.appendChild(tooltipNode);
@@ -384,8 +384,8 @@ export default class Tooltip {
  * Placement function, its context is the Tooltip instance.
  * @memberof Tooltip
  * @callback PlacementFunction
- * @param {HTMLElement} tooltip - tooltip DOM node.
- * @param {HTMLElement} reference - reference DOM node.
+ * @param {Element} tooltip - tooltip DOM node.
+ * @param {Element} reference - reference DOM node.
  * @return {String} placement - One of the allowed placement options.
  */
 

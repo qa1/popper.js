@@ -1,3 +1,5 @@
+// @flow
+
 import getOuterSizes from './getOuterSizes';
 import getOppositePlacement from './getOppositePlacement';
 
@@ -6,12 +8,16 @@ import getOppositePlacement from './getOppositePlacement';
  * @method
  * @memberof Popper.Utils
  * @param {Object} position - CSS position the Popper will get applied
- * @param {HTMLElement} popper - the popper element
+ * @param {Element} popper - the popper element
  * @param {Object} referenceOffsets - the reference offsets (the popper will be relative to this)
  * @param {String} placement - one of the valid placement options
  * @returns {Object} popperOffsets - An object containing the offsets which will be applied to the popper
  */
-export default function getPopperOffsets(popper, referenceOffsets, placement) {
+export default function getPopperOffsets(
+  popper: HTMLElement,
+  referenceOffsets: Object,
+  placement: string
+): Object {
   placement = placement.split('-')[0];
 
   // Get popper node sizes

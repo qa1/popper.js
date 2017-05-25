@@ -1,3 +1,5 @@
+// @flow
+
 import getStyleComputedProperty from './getStyleComputedProperty';
 import getParentNode from './getParentNode';
 
@@ -8,7 +10,7 @@ import getParentNode from './getParentNode';
  * @argument {Element} element
  * @returns {Element} scroll parent
  */
-export default function getScrollParent(element) {
+export default function getScrollParent(element: HTMLElement): HTMLElement {
   // Return body, `getScroll` will take care to get the correct `scrollTop` from it
   if (
     !element || ['HTML', 'BODY', '#document'].indexOf(element.nodeName) !== -1

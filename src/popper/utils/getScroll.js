@@ -1,3 +1,5 @@
+// @flow
+
 /**
  * Gets the scroll value of the given element in the given side (top and left)
  * @method
@@ -6,7 +8,7 @@
  * @argument {String} side `top` or `left`
  * @returns {number} amount of scrolled pixels
  */
-export default function getScroll(element, side = 'top') {
+export default function getScroll(element: HTMLElement, side: string = 'top'): number {
   const upperSide = side === 'top' ? 'scrollTop' : 'scrollLeft';
   const nodeName = element.nodeName;
 
@@ -16,5 +18,6 @@ export default function getScroll(element, side = 'top') {
     return scrollingElement[upperSide];
   }
 
+  // $FlowFixMe
   return element[upperSide];
 }

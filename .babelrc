@@ -1,7 +1,8 @@
 {
     "presets": ["stage-2"],
     "plugins": [
-        "external-helpers"
+        "external-helpers",
+        "transform-flow-strip-types"
     ],
     "env": {
         "coverage": {

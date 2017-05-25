@@ -1,3 +1,5 @@
+// @flow
+
 /**
  * Check if the given variable is a function
  * @method
@@ -5,7 +7,7 @@
  * @argument {Any} functionToCheck - variable to check
  * @returns {Boolean} answer to: is a function?
  */
-export default function isFunction(functionToCheck) {
+export default function isFunction(functionToCheck: Function): boolean {
   const getType = {};
   return (
     functionToCheck &&

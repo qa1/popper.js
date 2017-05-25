@@ -1,3 +1,5 @@
+// @flow
+
 import getStyleComputedProperty from './getStyleComputedProperty';
 import includeScroll from './includeScroll';
 import getScrollParent from './getScrollParent';
@@ -5,7 +7,7 @@ import getBoundingClientRect from './getBoundingClientRect';
 import runIsIE10 from './isIE10';
 import getClientRect from './getClientRect';
 
-export default function getOffsetRectRelativeToArbitraryNode(children, parent) {
+export default function getOffsetRectRelativeToArbitraryNode(children: HTMLElement, parent: HTMLElement | Node): Object {
   const isIE10 = runIsIE10();
   const isHTML = parent.nodeName === 'HTML';
   const childrenRect = getBoundingClientRect(children);

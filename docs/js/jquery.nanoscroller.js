@@ -377,7 +377,7 @@
 
   /**
     @class NanoScroll
-    @param element {HTMLElement|Node} the main element
+    @param element {Element|Node} the main element
     @param options {Object} nanoScroller's options
     @constructor
    */

@@ -1,3 +1,5 @@
+// @flow
+
 /**
  * Returns the offset parent of the given element
  * @method
@@ -5,7 +7,7 @@
  * @argument {Element} element
  * @returns {Element} offset parent
  */
-export default function getOffsetParent(element) {
+export default function getOffsetParent(element: HTMLElement): HTMLElement | Node {
   // NOTE: 1 DOM access here
   const offsetParent = element && element.offsetParent;
   const nodeName = offsetParent && offsetParent.nodeName;

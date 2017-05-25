@@ -1,3 +1,5 @@
+// @flow
+
 import getScroll from './getScroll';
 
 /*
@@ -5,11 +7,11 @@ import getScroll from './getScroll';
  * @method
  * @memberof Popper.Utils
  * @param {Object} rect - Rect object you want to change
- * @param {HTMLElement} element - The element from the function reads the scroll values
+ * @param {Element} element - The element from the function reads the scroll values
  * @param {Boolean} subtract - set to true if you want to subtract the scroll values
  * @return {Object} rect - The modifier rect object
  */
-export default function includeScroll(rect, element, subtract = false) {
+export default function includeScroll(rect: Object, element: HTMLElement, subtract: boolean = false): Object {
   const scrollTop = getScroll(element, 'top');
   const scrollLeft = getScroll(element, 'left');
   const modifier = subtract ? -1 : 1;

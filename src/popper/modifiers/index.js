@@ -133,7 +133,7 @@ export default {
      */
     padding: 5,
     /**
-     * @prop {String|HTMLElement} boundariesElement='scrollParent'
+     * @prop {String|Element} boundariesElement='scrollParent'
      * Boundaries used by the modifier, can be `scrollParent`, `window`,
      * `viewport` or any DOM element.
      */
@@ -175,7 +175,7 @@ export default {
     enabled: true,
     /** @prop {ModifierFn} */
     fn: arrow,
-    /** @prop {String|HTMLElement} element='[x-arrow]' - Selector or node used as arrow */
+    /** @prop {String|Element} element='[x-arrow]' - Selector or node used as arrow */
     element: '[x-arrow]',
   },
 
@@ -210,7 +210,7 @@ export default {
      */
     padding: 5,
     /**
-     * @prop {String|HTMLElement} boundariesElement='viewport'
+     * @prop {String|Element} boundariesElement='viewport'
      * The element which will define the boundaries of the popper position,
      * the popper will never be placed outside of the defined boundaries
      * (except if keepTogether is enabled)
@@ -292,7 +292,7 @@ export default {
  * @property {String} data.originalPlacement Placement originally defined on init
  * @property {Boolean} data.flipped True if popper has been flipped by flip modifier
  * @property {Boolean} data.hide True if the reference element is out of boundaries, useful to know when to hide the popper.
- * @property {HTMLElement} data.arrowElement Node used as arrow by arrow modifier
+ * @property {Element} data.arrowElement Node used as arrow by arrow modifier
  * @property {Object} data.styles Any CSS property defined here will be applied to the popper, it expects the JavaScript nomenclature (eg. `marginBottom`)
  * @property {Object} data.boundaries Offsets of the popper boundaries
  * @property {Object} data.offsets The measurements of popper, reference and arrow elements.

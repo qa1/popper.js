@@ -1,3 +1,5 @@
+// @flow
+
 import getScrollParent from './getScrollParent';
 import getParentNode from './getParentNode';
 import findCommonOffsetParent from './findCommonOffsetParent';
@@ -15,17 +17,17 @@ import isFixed from './isFixed';
  * @param {HTMLElement} popper
  * @param {HTMLElement} reference
  * @param {number} padding
- * @param {HTMLElement} boundariesElement - Element used to define the boundaries
+ * @param {HTMLElement | string} boundariesElement - Element used to define the boundaries
  * @returns {Object} Coordinates of the boundaries
  */
 export default function getBoundaries(
-  popper,
-  reference,
-  padding,
-  boundariesElement
-) {
+  popper: HTMLElement,
+  reference: HTMLElement,
+  padding: number,
+  boundariesElement: any
+): Object {
   // NOTE: 1 DOM access here
-  let boundaries = { top: 0, left: 0 };
+  let boundaries: Object = { top: 0, left: 0 };
   const offsetParent = findCommonOffsetParent(popper, reference);
 
   // Handle viewport case

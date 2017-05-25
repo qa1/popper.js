@@ -1,3 +1,5 @@
+// @flow
+
 import getStyleComputedProperty from './getStyleComputedProperty';
 import getBordersSize from './getBordersSize';
 import getWindowSizes from './getWindowSizes';
@@ -12,7 +14,7 @@ import isIE10 from './isIE10';
  * @param {HTMLElement} element
  * @return {Object} client rect
  */
-export default function getBoundingClientRect(element) {
+export default function getBoundingClientRect(element: HTMLElement): Object {
   let rect = {};
 
   // IE10 10 FIX: Please, don't ask, the element isn't
@@ -32,7 +34,7 @@ export default function getBoundingClientRect(element) {
     rect = element.getBoundingClientRect();
   }
 
-  const result = {
+  const result: Object = {
     left: rect.left,
     top: rect.top,
     width: rect.right - rect.left,

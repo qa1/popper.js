@@ -1,3 +1,5 @@
+// @flow
+
 /**
  * Get the prefixed supported property name
  * @method
@@ -5,7 +7,7 @@
  * @argument {String} property (camelCase)
  * @returns {String} prefixed property (camelCase)
  */
-export default function getSupportedPropertyName(property) {
+export default function getSupportedPropertyName(property: string): ?string {
   const prefixes = [false, 'ms', 'webkit', 'moz', 'o'];
   const upperProp = property.charAt(0).toUpperCase() + property.slice(1);
 

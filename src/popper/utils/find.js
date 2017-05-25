@@ -1,3 +1,5 @@
+// @flow
+
 /**
  * Mimics the `find` method of Array
  * @method
@@ -7,7 +9,7 @@
  * @argument value
  * @returns index or -1
  */
-export default function find(arr, check) {
+export default function find(arr: Array<any>, check: Function): any {
   // use native find if supported
   if (Array.prototype.find) {
     return arr.find(check);

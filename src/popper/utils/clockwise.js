@@ -1,3 +1,5 @@
+// @flow
+
 import placements from '../methods/placements';
 
 // Get rid of `auto` `auto-start` and `auto-end`
@@ -13,7 +15,7 @@ const validPlacements = placements.slice(3);
  * @argument {Boolean} counter - Set to true to walk the placements counterclockwise
  * @returns {Array} placements including their variations
  */
-export default function clockwise(placement, counter = false) {
+export default function clockwise(placement: string, counter: boolean = false): Array<string> {
   const index = validPlacements.indexOf(placement);
   const arr = validPlacements
     .slice(index + 1)

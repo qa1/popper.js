@@ -1,3 +1,5 @@
+// @flow
+
 import getStyleComputedProperty from './getStyleComputedProperty';
 import getParentNode from './getParentNode';
 
@@ -9,7 +11,7 @@ import getParentNode from './getParentNode';
  * @argument {Element} customContainer
  * @returns {Boolean} answer to "isFixed?"
  */
-export default function isFixed(element) {
+export default function isFixed(element: HTMLElement): boolean {
   const nodeName = element.nodeName;
   if (nodeName === 'BODY' || nodeName === 'HTML') {
     return false;

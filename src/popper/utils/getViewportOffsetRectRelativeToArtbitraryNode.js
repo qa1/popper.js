@@ -1,9 +1,11 @@
+// @flow
+
 import getOffsetRectRelativeToArbitraryNode
   from './getOffsetRectRelativeToArbitraryNode';
 import getScroll from './getScroll';
 import getClientRect from './getClientRect';
 
-export default function getViewportOffsetRectRelativeToArtbitraryNode(element) {
+export default function getViewportOffsetRectRelativeToArtbitraryNode(element: HTMLElement): Object {
   const html = window.document.documentElement;
   const relativeOffset = getOffsetRectRelativeToArbitraryNode(element, html);
   const width = Math.max(html.clientWidth, window.innerWidth || 0);

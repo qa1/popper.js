@@ -1,3 +1,5 @@
+// @flow
+
 /**
  * Tells if a given input is a number
  * @method
@@ -5,6 +7,6 @@
  * @param {*} input to check
  * @return {Boolean}
  */
-export default function isNumeric(n) {
+export default function isNumeric(n: any): boolean {
   return n !== '' && !isNaN(parseFloat(n)) && isFinite(n);
 }

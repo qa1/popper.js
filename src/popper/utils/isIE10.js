@@ -1,3 +1,5 @@
+// @flow
+
 /**
  * Tells if you are running Internet Explorer 10
  * @method
@@ -6,7 +8,7 @@
  */
 let isIE10 = undefined;
 
-export default function() {
+export default function(): boolean {
   if (isIE10 === undefined) {
     isIE10 = navigator.appVersion.indexOf('MSIE 10') !== -1;
   }

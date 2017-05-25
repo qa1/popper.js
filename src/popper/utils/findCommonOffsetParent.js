@@ -1,3 +1,5 @@
+// @flow
+
 import isOffsetContainer from './isOffsetContainer';
 import getRoot from './getRoot';
 import getOffsetParent from './getOffsetParent';
@@ -6,11 +8,11 @@ import getOffsetParent from './getOffsetParent';
  * Finds the offset parent common to the two provided nodes
  * @method
  * @memberof Popper.Utils
- * @argument {Element} element1
- * @argument {Element} element2
- * @returns {Element} common offset parent
+ * @argument {HTMLElement} element1
+ * @argument {HTMLElement} element2
+ * @returns {Node | Element} common offset parent
  */
-export default function findCommonOffsetParent(element1, element2) {
+export default function findCommonOffsetParent(element1: HTMLElement, element2: HTMLElement): HTMLElement | Node {
   // This check is needed to avoid errors in case one of the elements isn't defined for any reason
   if (!element1 || !element1.nodeType || !element2 || !element2.nodeType) {
     return window.document.documentElement;
@@ -39,6 +41,7 @@ export default function findCommonOffsetParent(element1, element2) {
       return commonAncestorContainer;
     }
 
+    // $FlowFixMe
     return getOffsetParent(commonAncestorContainer);
   }
 

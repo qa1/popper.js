@@ -1,3 +1,5 @@
+// @flow
+
 import isIE10 from './isIE10';
 
 function getSize(axis, body, html, computedStyle) {
@@ -13,7 +15,7 @@ function getSize(axis, body, html, computedStyle) {
   );
 }
 
-export default function getWindowSizes() {
+export default function getWindowSizes(): Object {
   const body = window.document.body;
   const html = window.document.documentElement;
   const computedStyle = isIE10() && window.getComputedStyle(html);

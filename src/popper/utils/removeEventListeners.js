@@ -1,10 +1,12 @@
+// @flow
+
 /**
  * Remove event listeners used to update the popper position
  * @method
  * @memberof Popper.Utils
  * @private
  */
-export default function removeEventListeners(reference, state) {
+export default function removeEventListeners(reference: HTMLElement, state: Object): Object {
   // Remove resize event listener on window
   window.removeEventListener('resize', state.updateBound);
 

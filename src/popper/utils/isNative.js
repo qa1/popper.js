@@ -1,3 +1,5 @@
+// @flow
+
 const nativeHints = [
   'native code',
   '[object MutationObserverConstructor]', // for mobile safari iOS 9.0
@@ -10,5 +12,6 @@ const nativeHints = [
  * @argument {Function | undefined} fn the function to check
  * @returns {Boolean}
  */
-export default fn =>
-  nativeHints.some(hint => (fn || '').toString().indexOf(hint) > -1);
+export default function isNative(fn: Function): boolean {
+  return nativeHints.some(hint => (fn || '').toString().indexOf(hint) > -1);
+}
